@@ -2,21 +2,14 @@
 
 **Name:** Shaik
 **Date:** September 23, 2026
+5. **The reduction.** From `budget.json`: baseline tokens, assembled tokens, reduction %. Which section dominates the assembled context, and why keep it verbatim?
+   → Baseline: 38,708 tokens → Assembled: 16,828 tokens (56.53% reduction). Active segment dominates at 15,789 tokens (93.8% of assembled). Kept verbatim because it's the current live conversation — only resolved segments get compressed.
 
-Replace each `→` with your answer. **Every answer cites at least one artifact from your own runs** — a run ID, file path, token count, claim outcome, or test count. Uncited answers do not pass. 3–6 sentences each unless noted. Paste short artifact snippets where they help.
+6. **Summarize vs preserve.** State the rule for what gets summarized vs kept byte-exact, citing your per-section token numbers.
+   → Resolved segments summarized: refund 12,334→419 tokens (96.6% reduction), subscription 11,475→434 tokens (96.2% reduction). Case facts (204 tokens) kept byte-exact as golden record. Active segment (15,789 tokens) kept verbatim as live exchange.
 
-**Environment**
-
-- Model(s): claude-haiku-4-5-20251001
-- OS / Python: Linux, Python 3.13
-- Approx. API spend: $0 (System 3 no API; System 4 offline with recorded response)
-
----
-
-## Part 1 — Per-system
-
-### System 1 — Agentic loop
-
+7. **Facts block.** Compare `eval.jsonl` to `eval_control.jsonl`. Which question regressed, and what does that prove?
+   → From `eval_control.jsonl`: Q1 PASSES (refund amount $22.14 appears in active conversation text), Q6 FAILS (can't find "in_progress" status token without case_facts block). Proves case_facts (204 tokens verbatim) is load-bearing — compressing or removing it loses structured decision data.
 1. **Loop control.** Quote the `stop_reason` sequence from one trace. Name the file and function that decides continue-vs-stop, and how.
    → **Skipped** — System 1 environment broken (SDK version incompatibility). Could not capture trace evidence.
 
