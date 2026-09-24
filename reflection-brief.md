@@ -1,6 +1,6 @@
 # Reflection Brief — Harness Engineering Capstone
 
-**Name:** Shaik
+**Name:** Shaik Faisel Ahmed
 
 **Date:** September 23, 2026
 
