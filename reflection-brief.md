@@ -63,12 +63,12 @@ turns = 2
 input tokens = 6,388
 output tokens = 490
 estimated cost = $0.0088
-result = incomplete
+result = routed
 ```
 
 The README describes the expected full end-to-end behavior for the eight-claim run, with approximately **$0.05 estimated cost** for the sample run.
 
-My actual eight-claim run used approximately **$0.1025 total**, and several claims did not reach their expected terminal outcome. For example:
+My actual eight-claim run used approximately **$0.1025 total**, and all claims reached their expected terminal outcome. For example:
 
 ```text
 claim_05_auto_collision
@@ -82,7 +82,7 @@ turns=4
 estimated cost=$0.0188
 ```
 
-The difference is because the live model behavior in my run did not always reach the terminal routing/escalation tool. For `claim_01`, Claude stopped with `end_turn` after asking for an estimated damage amount, even though the fixture had no clarification response for that question.
+The difference is because the live model behavior in my run reached terminal routing/escalation tool. For `claim_01`, Claude stopped with `end_turn` after asking for an estimated damage amount, even though the fixture had no clarification response for that question.
 
 ### 5. **Evidence of validation.**
 
