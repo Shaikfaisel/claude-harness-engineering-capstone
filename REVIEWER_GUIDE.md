@@ -1,6 +1,6 @@
 # Reviewer Guide — Harness Engineering Capstone
 
-This guide maps each rubric requirement to the evidence file that proves it.
+This guide maps each rubric requirement to the submitted evidence files that document it.
 
 ---
 
@@ -8,8 +8,8 @@ This guide maps each rubric requirement to the evidence file that proves it.
 
 **Rubric:** Operate a stop_reason-driven agentic loop with integrated tools
 
-| Evidence | Location | Proves |
-|----------|----------|--------|
+| Evidence | Location | Shows |
+|----------|----------|-------|
 | Tests (29 passed) | `system_1_tests.txt` | Loop implementation passes automated suite |
 | Run Summary | `system_1_run_summary.md` | All 8 claims terminate in routed or escalated |
 | Stop Reason Trace | `system_1_run_summary.md` → Loop Behavior section | stop_reason=tool_use → tool execution → stop_reason=end_turn |
@@ -21,8 +21,8 @@ This guide maps each rubric requirement to the evidence file that proves it.
 
 **Rubric:** Engineer a context strategy that reduces token load while preserving answerability
 
-| Evidence | Location | Proves |
-|----------|----------|--------|
+| Evidence | Location | Shows |
+|----------|----------|-------|
 | Tests | `system_2_tests.txt` | Suite passes |
 | Budget Data | `system_2_budget.json` | baseline_tokens: 38708 → assembled_tokens: 16828 (56.53% reduction) |
 | Eval Results | `system_2_eval.jsonl` | 6/6 questions pass on compressed context |
@@ -35,8 +35,8 @@ This guide maps each rubric requirement to the evidence file that proves it.
 
 **Rubric:** Configure a Claude Code harness with hierarchy, path-scoped rules, commands, and skills
 
-| Evidence | Location | Proves |
-|----------|----------|--------|
+| Evidence | Location | Shows |
+|----------|----------|-------|
 | Tests (35 passed) | `system_3_tests.txt` | Config hierarchy and scoping pass automated suite |
 | Validator (OK) | `system_3_validator.txt` | Validator confirms project structure is correct |
 | Reflection (Q8-10) | `reflection-brief.md` → System 3 section | Names .claude/rules, .claude/commands, .claude/skills with path scopes |
@@ -47,8 +47,8 @@ This guide maps each rubric requirement to the evidence file that proves it.
 
 **Rubric:** Implement Layer 3 orchestration with tiered state, crash recovery, and session forking
 
-| Evidence | Location | Proves |
-|----------|----------|--------|
+| Evidence | Location | Shows |
+|----------|----------|-------|
 | Tests (28 passed) | `system_4_tests.txt` | Orchestration design passes automated suite |
 | Run Output | `system_4_run.txt` | Shift processed end-to-end |
 | Hot State | `system_4_hot_state.json` | State kept under budget (643 bytes) |
@@ -68,7 +68,7 @@ This guide maps each rubric requirement to the evidence file that proves it.
 | System 4 | 28 | 28 passed | `system_4_tests.txt` |
 | **Total** | **109** | **All passed** | See `EVIDENCE_INDEX.md` |
 
-**Test Behavior Guaranteed:** Fork scratchpads remain isolated from base hot state (`test_fork_for_hypothesis_copies_state_without_mutating_base`), which a single run would not prove.
+**Important Test Coverage:** Fork scratchpads remain isolated from base hot state (`test_fork_for_hypothesis_copies_state_without_mutating_base`), which a single run would not document.
 
 ---
 
@@ -76,8 +76,8 @@ This guide maps each rubric requirement to the evidence file that proves it.
 
 **Rubric:** Defend architectural trade-offs in an evidence-grounded reflection brief
 
-| Section | File | Proves |
-|---------|------|--------|
+| Section | File | Shows |
+|---------|------|-------|
 | Systems 1-4 analysis | `reflection-brief.md` | Each answer cites concrete artifacts (token counts, file paths, test names) |
 | Three-layer synthesis | `reflection-brief.md` Q14-20 | Names Model, Harness, Orchestration layers with files from each system |
 | Deterministic vs prompt-based | `reflection-brief.md` Q16 | Contrasts tool allowlists (deterministic) with model reasoning |
@@ -97,5 +97,5 @@ This guide maps each rubric requirement to the evidence file that proves it.
 
 ---
 
-**If all items above are present and files are readable, all rubric items are met.**
+These files are organized to help the reviewer verify each rubric item quickly and locate the relevant run, test, and reflection evidence.
 
